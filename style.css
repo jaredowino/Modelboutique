@@ -155,3 +155,4 @@ form button:hover{background:#e63950;transform:scale(1.05);}
 @media(max-width:768px){.product-grid,.contact-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));}.gallery img{width:45%;}}
 @media(max-width:480px){.gallery img{width:100%;}}
 
+
