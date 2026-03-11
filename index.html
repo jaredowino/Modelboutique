@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Model Boutique</title>
+<link rel="stylesheet" href="style.css">
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- QR Code Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1>Model Boutique</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#location">Location</a>
+    <a href="#contact">Contact</a>
+    <a href="#order">Order</a>
+  </nav>
+</header>
+
+<!-- About Section -->
+<section id="about">
+  <h2>About the Boutique</h2>
+  <p>Our mission is to offer the latest fashion that fits all generations. We provide modern, stylish and comfortable clothing for everyone.</p>
+</section>
+
+<!-- Products Section -->
+<section id="products">
+  <h2>Products</h2>
+  <div class="product-grid">
+    <div class="product-card"><h3>Jeans</h3><p>Price: KSh 2,500</p></div>
+    <div class="product-card"><h3>Jackets</h3><p>Price: KSh 3,000</p></div>
+    <div class="product-card"><h3>Cargo Pants</h3><p>Price: KSh 2,800</p></div>
+    <div class="product-card"><h3>Baby Clothes</h3><p>Price: KSh 1,200</p></div>
+    <div class="product-card"><h3>Khaki</h3><p>Price: KSh 2,000</p></div>
+    <div class="product-card"><h3>Dresses</h3><p>Price: KSh 3,500</p></div>
+    <div class="product-card"><h3>Pajamas</h3><p>Price: KSh 1,500</p></div>
+    <div class="product-card"><h3>Shoes</h3><p>Price: KSh 4,000</p></div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b" data-src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b" alt="Gallery Image">
+    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8" data-src="https://images.unsplash.com/photo-1441986300917-64674bd600d8" alt="Gallery Image">
+    <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f" data-src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f" alt="Gallery Image">
+  </div>
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" src="">
+  </div>
+</section>
+
+<!-- Location Section -->
+<section id="location">
+  <h2>Location</h2>
+  <div class="location-container">
+    <!-- Google Map -->
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1YcpRktCTjQDrXE8OEbfviImE86094bY&z=13"></iframe>
+
+    <!-- Business Premises Image -->
+    <div class="premises-container">
+      <img src="https://i.imgur.com/S1clmtR.png" alt="Model Boutique Premises">
+    </div>
+  </div>
+
+  <a href="https://www.google.com/maps/dir/?api=1&destination=-1.2921,36.8219" target="_blank" class="direction-btn">Get Directions</a>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-grid">
+    <a href="tel:0740245537" class="contact-box phone"><i class="fas fa-phone"></i> Call Us</a>
+    <a href="https://wa.me/254740245537" target="_blank" class="contact-box whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="mailto:jaredowino2003@gmail.com" class="contact-box gmail"><i class="fas fa-envelope"></i> Email</a>
+    <a href="https://www.instagram.com/sallythiga" target="_blank" class="contact-box instagram"><i class="fab fa-instagram"></i> Instagram</a>
+    <a href="https://www.facebook.com/jecko.black" target="_blank" class="contact-box facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+    <a href="https://www.tiktok.com/@bigbro" target="_blank" class="contact-box tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
+  </div>
+
+  <!-- QR Code -->
+  <div class="qr-section">
+    <h3>Scan to Visit Our Website</h3>
+    <div id="qrcode"></div>
+  </div>
+</section>
+
+<!-- Reviews Section -->
+<section id="reviews">
+  <h2>Customer Reviews</h2>
+  <div id="reviewContainer"></div>
+  <form id="reviewForm">
+    <input type="text" id="reviewName" placeholder="Your Name" required>
+    <textarea id="reviewMessage" placeholder="Write your review..." required></textarea>
+    <div class="star-rating">
+      <span data-value="5">⭐</span>
+      <span data-value="4">⭐</span>
+      <span data-value="3">⭐</span>
+      <span data-value="2">⭐</span>
+      <span data-value="1">⭐</span>
+    </div>
+    <input type="hidden" id="rating" value="0" required>
+    <button type="submit">Send Review</button>
+  </form>
+</section>
+
+<!-- Order Section -->
+<section id="order">
+  <h2>Place an Order</h2>
+  <form id="orderForm">
+    <input type="text" placeholder="Your Name" required>
+    <input type="tel" placeholder="Phone Number" required>
+    <select id="productSelect" required>
+      <option value="" data-price="0">Select Product</option>
+      <option value="Jeans" data-price="2500">Jeans - KSh 2,500</option>
+      <option value="Jackets" data-price="3000">Jackets - KSh 3,000</option>
+      <option value="Cargo Pants" data-price="2800">Cargo Pants - KSh 2,800</option>
+      <option value="Baby Clothes" data-price="1200">Baby Clothes - KSh 1,200</option>
+      <option value="Khaki" data-price="2000">Khaki - KSh 2,000</option>
+      <option value="Dresses" data-price="3500">Dresses - KSh 3,500</option>
+      <option value="Pajamas" data-price="1500">Pajamas - KSh 1,500</option>
+      <option value="Shoes" data-price="4000">Shoes - KSh 4,000</option>
+    </select>
+    <input type="number" id="quantity" placeholder="Quantity" min="1" value="1" required>
+    <input type="text" id="priceDisplay" placeholder="Price per item" readonly>
+    <input type="text" id="totalDisplay" placeholder="Total" readonly>
+    <button type="submit">Place Order</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Model Boutique</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+      </html>
