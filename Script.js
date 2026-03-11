@@ -1,3 +1,4 @@
+// script.js
 document.addEventListener("DOMContentLoaded", function() {
 
   // ===== ORDER FORM =====
@@ -8,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const totalDisplay = document.getElementById("totalDisplay");
 
   function updatePriceTotal() {
-    const price = parseInt(productSelect.options[productSelect.selectedIndex].dataset.price || 0);
-    const quantity = parseInt(quantityInput.value || 0);
+    const price = parseInt(productSelect.selectedOptions[0].dataset.price || 0);
+    const quantity = parseInt(quantityInput.value || 1);
     priceDisplay.value = price ? `KSh ${price}` : "";
     totalDisplay.value = (price && quantity) ? `KSh ${price * quantity}` : "";
   }
@@ -23,17 +24,21 @@ document.addEventListener("DOMContentLoaded", function() {
   if(orderForm) {
     orderForm.addEventListener("submit", function(e) {
       e.preventDefault();
-      const name = orderForm.querySelector("input[type='text']").value;
-      const phone = orderForm.querySelector("input[type='tel']").value;
+
+      const name = orderForm.querySelector("input[placeholder='Your Name']").value.trim();
+      const phone = orderForm.querySelector("input[placeholder='Phone Number']").value.trim();
       const product = productSelect.value;
-      const price = parseInt(productSelect.options[productSelect.selectedIndex].dataset.price || 0);
-      const quantity = parseInt(quantityInput.value);
+      const price = parseInt(productSelect.selectedOptions[0].dataset.price || 0);
+      const quantity = parseInt(quantityInput.value || 1);
       const total = price * quantity;
 
       if(!product) { alert("Please select a product!"); return; }
 
-      const message = `New Order - Model Boutique%0A%0ACustomer Name: ${name}%0APhone: ${phone}%0AProduct: ${product}%0AQuantity: ${quantity}%0APrice per item: KSh ${price}%0ATotal: KSh ${total}`;
-      window.open("https://wa.me/254740245537?text=" + message, "_blank");
+      // Construct WhatsApp message
+      const message = `New Order - Model Boutique\n\nCustomer Name: ${name}\nPhone: ${phone}\nProduct: ${product}\nQuantity: ${quantity}\nPrice per item: KSh ${price}\nTotal: KSh ${total}`;
+
+      // Open WhatsApp
+      window.open("https://wa.me/254740245537?text=" + encodeURIComponent(message), "_blank");
 
       orderForm.reset();
       updatePriceTotal();
@@ -46,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const ratingInput = document.getElementById("rating");
   const stars = document.querySelectorAll(".star-rating span");
 
+  // Star hover & selection
   if(stars && ratingInput) {
     stars.forEach(star => {
       star.addEventListener("mouseover", () => {
@@ -64,17 +70,17 @@ document.addEventListener("DOMContentLoaded", function() {
   if(reviewForm) {
     reviewForm.addEventListener("submit", function(e) {
       e.preventDefault();
-      const name = document.getElementById("reviewName").value;
-      const message = document.getElementById("reviewMessage").value;
+      const name = document.getElementById("reviewName").value.trim();
+      const message = document.getElementById("reviewMessage").value.trim();
       const rating = ratingInput.value;
 
       if(rating === "0") { alert("Please select a star rating!"); return; }
 
-      // Send review via WhatsApp
-      const reviewText = `Customer Review - Model Boutique%0A%0AName: ${name}%0ARating: ${rating} Stars%0AReview: ${message}`;
-      window.open("https://wa.me/254740245537?text=" + reviewText, "_blank");
+      // WhatsApp message
+      const reviewText = `Customer Review - Model Boutique\n\nName: ${name}\nRating: ${rating} Stars\nReview: ${message}`;
+      window.open("https://wa.me/254740245537?text=" + encodeURIComponent(reviewText), "_blank");
 
-      // Show review on the page
+      // Display review on page
       const reviewBox = document.createElement("div");
       reviewBox.classList.add("review");
       reviewBox.innerHTML = `<p>${message}</p><span>- ${name}</span><div class='stars'>${"⭐".repeat(rating)}</div>`;
@@ -100,23 +106,17 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     });
 
-    lightboxClose.addEventListener("click", () => lightbox.style.display="none");
-    lightbox.addEventListener("click", e => { if(e.target === lightbox) lightbox.style.display="none"; });
+    lightboxClose.addEventListener("click", () => lightbox.style.display = "none");
+    lightbox.addEventListener("click", e => {
+      if(e.target === lightbox) lightbox.style.display = "none";
+    });
   }
-  <script>
-  new QRCode(document.getElementById("qrcode"), {
-    text: "https://jaredowino.github.io/model-boutique/",
-    width: 150,
-    height: 150
-  });
-</script>
-
 
   // ===== QR CODE =====
-  var qrcodeContainer = document.getElementById("qrcode");
+  const qrcodeContainer = document.getElementById("qrcode");
   if(qrcodeContainer) {
     new QRCode(qrcodeContainer, {
-      text: "https://yourwebsite.com", // <-- Replace with your boutique website URL
+      text: "https://jaredowino.github.io/Modelboutique/",
       width: 150,
       height: 150,
       colorDark : "#000000",
