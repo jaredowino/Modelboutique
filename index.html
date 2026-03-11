@@ -1,148 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Model Boutique</title>
-<link rel="stylesheet" href="style.css">
-<!-- Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<!-- QR Code Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Boutique</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
-
 <body>
 
-<header id="header">
-  <h1>Model Boutique</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#location">Location</a>
-    <a href="#contact">Contact</a>
-    <a href="#order">Order</a>
-  </nav>
-</header>
+  <header id="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">✦</span>
+        <h1>Model Boutique</h1>
+      </div>
+      <nav id="mainNav">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Location</a>
+        <a href="#contact">Contact</a>
+        <a href="#order" class="nav-cta">Order Now</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-<!-- About Section -->
-<section id="about">
-  <h2>About the Boutique</h2>
-  <p>Our mission is to offer the latest fashion that fits all generations. We provide modern, stylish and comfortable clothing for everyone.</p>
-</section>
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Nairobi's Finest Fashion</p>
+      <h2 class="hero-title">Style That<br><em>Speaks</em> For You</h2>
+      <p class="hero-sub">Modern, stylish and comfortable clothing for every generation</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary">Shop Now</a>
+        <a href="#gallery" class="btn-outline">View Gallery</a>
+      </div>
+    </div>
+  </section>
 
-<!-- Products Section -->
-<section id="products">
-  <h2>Products</h2>
-  <div class="product-grid">
-    <div class="product-card"><h3>Jeans</h3><p>Price: KSh 2,500</p></div>
-    <div class="product-card"><h3>Jackets</h3><p>Price: KSh 3,000</p></div>
-    <div class="product-card"><h3>Cargo Pants</h3><p>Price: KSh 2,800</p></div>
-    <div class="product-card"><h3>Baby Clothes</h3><p>Price: KSh 1,200</p></div>
-    <div class="product-card"><h3>Khaki</h3><p>Price: KSh 2,000</p></div>
-    <div class="product-card"><h3>Dresses</h3><p>Price: KSh 3,500</p></div>
-    <div class="product-card"><h3>Pajamas</h3><p>Price: KSh 1,500</p></div>
-    <div class="product-card"><h3>Shoes</h3><p>Price: KSh 4,000</p></div>
-  </div>
-</section>
+  <section id="about">
+    <div class="section-inner split-layout">
+      <div class="about-text">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">About the Boutique</h2>
+        <p>Our mission is to offer the latest fashion that fits all generations. We provide modern, stylish and comfortable clothing for everyone — from babies to adults, casual to formal.</p>
+        <p>Located in the heart of Nairobi, Model Boutique has been a trusted destination for quality fashion at fair prices.</p>
+        <a href="#order" class="btn-primary">Order Today</a>
+      </div>
+      <div class="about-visual">
+        <div class="about-card">
+          <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Happy Customers</span></div>
+          <div class="stat"><span class="stat-num">8+</span><span class="stat-label">Product Lines</span></div>
+          <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Quality Assured</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Gallery Section -->
-<section id="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b" data-src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b" alt="Gallery Image">
-    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8" data-src="https://images.unsplash.com/photo-1441986300917-64674bd600d8" alt="Gallery Image">
-    <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f" data-src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f" alt="Gallery Image">
-  </div>
+  <section id="products">
+    <div class="section-inner">
+      <span class="section-label center">What We Offer</span>
+      <h2 class="section-title center">Our Products</h2>
+      <div class="product-grid">
+        <div class="product-card"><div class="product-icon">👖</div><h3>Jeans</h3><p class="product-price">KSh 2,500</p><a href="#order" class="product-order">Order →</a></div>
+        <div class="product-card"><div class="product-icon">🧥</div><h3>Jackets</h3><p class="product-price">KSh 3,000</p><a href="#order" class="product-order">Order →</a></div>
+        <div class="product-card"><div class="product-icon">👕</div><h3>Cargo Pants</h3><p class="product-price">KSh 2,800</p><a href="#order" class="product-order">Order →</a></div>
+        <div class="product-card"><div class="product-icon">🧸</div><h3>Baby Clothes</h3><p class="product-price">KSh 1,200</p><a href="#order" class="product-order">Order →</a></div>
+        <div class="product-card"><div class="product-icon">👔</div><h3>Khaki</h3><p class="product-price">KSh 2,000</p><a href="#order" class="product-order">Order →</a></div>
+        <div class="product-card"><div class="product-icon">👗</div><h3>Dresses</h3><p class="product-price">KSh 3,500</p><a href="#order" class="product-order">Order →</a></div>
+        <div class="product-card"><div class="product-icon">🌙</div><h3>Pajamas</h3><p class="product-price">KSh 1,500</p><a href="#order" class="product-order">Order →</a></div>
+        <div class="product-card"><div class="product-icon">👟</div><h3>Shoes</h3><p class="product-price">KSh 4,000</p><a href="#order" class="product-order">Order →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="section-inner">
+      <span class="section-label center">Our Style</span>
+      <h2 class="section-title center">Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item large">
+          <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800" data-src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1200" alt="Fashion Collection">
+          <div class="gallery-overlay"><span>View</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600" data-src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200" alt="Boutique Interior">
+          <div class="gallery-overlay"><span>View</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600" data-src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=1200" alt="Clothing">
+          <div class="gallery-overlay"><span>View</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600" data-src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=1200" alt="Style">
+          <div class="gallery-overlay"><span>View</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" data-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200" alt="Fashion">
+          <div class="gallery-overlay"><span>View</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" src="">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" src="#" alt="Full view">
   </div>
-</section>
 
-<!-- Location Section -->
-<section id="location">
-  <h2>Location</h2>
-  <div class="location-container">
-    <!-- Google Map -->
-    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1YcpRktCTjQDrXE8OEbfviImE86094bY&z=13"></iframe>
-
-    <!-- Business Premises Image -->
-    <div class="premises-container">
-      <img src="https://i.imgur.com/S1clmtR.png" alt="Model Boutique Premises">
+  <section id="location">
+    <div class="section-inner">
+      <span class="section-label">Find Us</span>
+      <h2 class="section-title">Our Location</h2>
+      <div class="location-layout">
+        <div class="map-wrap">
+          <iframe title="Model Boutique Map" src="https://www.google.com/maps/d/u/0/embed?mid=1YcpRktCTjQDrXE8OEbfviImE86094bY&z=13" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="location-info">
+          <img src="https://i.imgur.com/S1clmtR.png" alt="Model Boutique Premises">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=-1.2921,36.8219" target="_blank" class="btn-primary">
+            <i class="fas fa-map-marker-alt"></i> Get Directions
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <a href="https://www.google.com/maps/dir/?api=1&destination=-1.2921,36.8219" target="_blank" class="direction-btn">Get Directions</a>
-</section>
-
-<!-- Contact Section -->
-<section id="contact">
-  <h2>Contact Us</h2>
-  <div class="contact-grid">
-    <a href="tel:0740245537" class="contact-box phone"><i class="fas fa-phone"></i> Call Us</a>
-    <a href="https://wa.me/254740245537" target="_blank" class="contact-box whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    <a href="mailto:jaredowino2003@gmail.com" class="contact-box gmail"><i class="fas fa-envelope"></i> Email</a>
-    <a href="https://www.instagram.com/sallythiga" target="_blank" class="contact-box instagram"><i class="fab fa-instagram"></i> Instagram</a>
-    <a href="https://www.facebook.com/jecko.black" target="_blank" class="contact-box facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
-    <a href="https://www.tiktok.com/@bigbro" target="_blank" class="contact-box tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
-  </div>
-
-<!-- Reviews Section -->
-<section id="reviews">
-  <h2>Customer Reviews</h2>
-  <div id="reviewContainer"></div>
-  <form id="reviewForm">
-    <input type="text" id="reviewName" placeholder="Your Name" required>
-    <textarea id="reviewMessage" placeholder="Write your review..." required></textarea>
-    <div class="star-rating">
-      <span data-value="5">⭐</span>
-      <span data-value="4">⭐</span>
-      <span data-value="3">⭐</span>
-      <span data-value="2">⭐</span>
-      <span data-value="1">⭐</span>
+  <section id="contact">
+    <div class="section-inner">
+      <span class="section-label center">Get In Touch</span>
+      <h2 class="section-title center">Contact Us</h2>
+      <div class="contact-grid">
+        <a href="tel:0740245537" class="contact-card phone">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <span>Call Us</span><small>0740 245 537</small>
+        </a>
+        <a href="https://wa.me/254740245537" target="_blank" class="contact-card whatsapp">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <span>WhatsApp</span><small>Chat with us</small>
+        </a>
+        <a href="mailto:jaredowino2003@gmail.com" class="contact-card email">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <span>Email</span><small>Send a message</small>
+        </a>
+        <a href="https://www.instagram.com/sallythiga" target="_blank" class="contact-card instagram">
+          <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+          <span>Instagram</span><small>@sallythiga</small>
+        </a>
+        <a href="https://www.facebook.com/jecko.black" target="_blank" class="contact-card facebook">
+          <div class="contact-icon"><i class="fab fa-facebook-f"></i></div>
+          <span>Facebook</span><small>Follow us</small>
+        </a>
+        <a href="https://www.tiktok.com/@bigbro" target="_blank" class="contact-card tiktok">
+          <div class="contact-icon"><i class="fab fa-tiktok"></i></div>
+          <span>TikTok</span><small>@bigbro</small>
+        </a>
+      </div>
     </div>
-    <input type="hidden" id="rating" value="0" required>
-    <button type="submit">Send Review</button>
-  </form>
-</section>
+  </section>
 
-<!-- Order Section -->
-<section id="order">
-  <h2>Place an Order</h2>
-  <form id="orderForm">
-    <input type="text" placeholder="Your Name" required>
-    <input type="tel" placeholder="Phone Number" required>
-    <select id="productSelect" required>
-      <option value="" data-price="0">Select Product</option>
-      <option value="Jeans" data-price="2500">Jeans - KSh 2,500</option>
-      <option value="Jackets" data-price="3000">Jackets - KSh 3,000</option>
-      <option value="Cargo Pants" data-price="2800">Cargo Pants - KSh 2,800</option>
-      <option value="Baby Clothes" data-price="1200">Baby Clothes - KSh 1,200</option>
-      <option value="Khaki" data-price="2000">Khaki - KSh 2,000</option>
-      <option value="Dresses" data-price="3500">Dresses - KSh 3,500</option>
-      <option value="Pajamas" data-price="1500">Pajamas - KSh 1,500</option>
-      <option value="Shoes" data-price="4000">Shoes - KSh 4,000</option>
-    </select>
-    <input type="number" id="quantity" placeholder="Quantity" min="1" value="1" required>
-    <input type="text" id="priceDisplay" placeholder="Price per item" readonly>
-    <input type="text" id="totalDisplay" placeholder="Total" readonly>
-    <button type="submit">Place Order</button>
-  </form>
-</section>
-  <!-- QR Code -->
-<section id="qrcode-section">
-  <h2>Scan to Visit Our Website</h2>
-  <div id="qrcode"></div>
-</section>
+  <section id="reviews">
+    <div class="section-inner">
+      <span class="section-label center">What Clients Say</span>
+      <h2 class="section-title center">Customer Reviews</h2>
+      <div id="reviewContainer" class="reviews-list"></div>
+      <div class="review-form-wrap">
+        <h3>Leave a Review</h3>
+        <form id="reviewForm" novalidate>
+          <div class="form-group">
+            <label for="reviewName">Your Name</label>
+            <input type="text" id="reviewName" placeholder="e.g. Jane Wanjiru" required>
+          </div>
+          <div class="form-group">
+            <label for="reviewMessage">Your Review</label>
+            <textarea id="reviewMessage" placeholder="Tell us about your experience..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label>Star Rating</label>
+            <div class="star-rating" id="starRating">
+              <button type="button" class="star" data-value="1">★</button>
+              <button type="button" class="star" data-value="2">★</button>
+              <button type="button" class="star" data-value="3">★</button>
+              <button type="button" class="star" data-value="4">★</button>
+              <button type="button" class="star" data-value="5">★</button>
+            </div>
+            <input type="hidden" id="rating" value="0">
+          </div>
+          <button type="submit" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Send Review via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <p>© 2026 Model Boutique</p>
-</footer>
+  <section id="order">
+    <div class="section-inner">
+      <span class="section-label center">Shop With Us</span>
+      <h2 class="section-title center">Place an Order</h2>
+      <div class="order-wrap">
+        <form id="orderForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="customerName">Full Name</label>
+              <input type="text" id="customerName" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="customerPhone">Phone Number</label>
+              <input type="tel" id="customerPhone" placeholder="07XX XXX XXX" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="productSelect">Select Product</label>
+            <select id="productSelect" required>
+              <option value="" data-price="0">— Choose a product —</option>
+              <option value="Jeans"        data-price="2500">👖 Jeans — KSh 2,500</option>
+              <option value="Jackets"      data-price="3000">🧥 Jackets — KSh 3,000</option>
+              <option value="Cargo Pants"  data-price="2800">👕 Cargo Pants — KSh 2,800</option>
+              <option value="Baby Clothes" data-price="1200">🧸 Baby Clothes — KSh 1,200</option>
+              <option value="Khaki"        data-price="2000">👔 Khaki — KSh 2,000</option>
+              <option value="Dresses"      data-price="3500">👗 Dresses — KSh 3,500</option>
+              <option value="Pajamas"      data-price="1500">🌙 Pajamas — KSh 1,500</option>
+              <option value="Shoes"        data-price="4000">👟 Shoes — KSh 4,000</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="quantity">Quantity</label>
+              <input type="number" id="quantity" min="1" value="1" required>
+            </div>
+            <div class="form-group">
+              <label for="priceDisplay">Price per Item</label>
+              <input type="text" id="priceDisplay" placeholder="—" readonly>
+            </div>
+            <div class="form-group">
+              <label for="totalDisplay">Total</label>
+              <input type="text" id="totalDisplay" placeholder="—" readonly class="total-field">
+            </div>
+          </div>
+          <button type="submit" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Send Order via WhatsApp
+          </button>
+        </form>
+        <p class="order-note"><i class="fas fa-info-circle"></i> Your order will be sent directly to our WhatsApp for fast processing.</p>
+      </div>
+    </div>
+  </section>
 
-<script src="script.js"></script>
+  <section id="qr-section">
+    <div class="section-inner qr-inner">
+      <span class="section-label center">Share Us</span>
+      <h2 class="section-title center">Scan to Visit Our Website</h2>
+      <div class="qr-card">
+        <div id="qrcode"></div>
+        <p class="qr-url">modelboutique.co.ke</p>
+        <p class="qr-hint">Scan with your phone camera</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><span>✦</span><span>Model Boutique</span></div>
+      <p class="footer-tagline">Style that speaks for you.</p>
+      <nav class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a href="#order">Order</a>
+      </nav>
+      <p class="footer-copy">© 2026 Model Boutique. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-      </html>
+                                    </html>
+
 
 
 
