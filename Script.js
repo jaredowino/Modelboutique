@@ -103,6 +103,14 @@ document.addEventListener("DOMContentLoaded", function() {
     lightboxClose.addEventListener("click", () => lightbox.style.display="none");
     lightbox.addEventListener("click", e => { if(e.target === lightbox) lightbox.style.display="none"; });
   }
+  <script>
+  new QRCode(document.getElementById("qrcode"), {
+    text: "https://jaredowino.github.io/model-boutique/",
+    width: 150,
+    height: 150
+  });
+</script>
+
 
   // ===== QR CODE =====
   var qrcodeContainer = document.getElementById("qrcode");
