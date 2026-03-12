@@ -1,17 +1,46 @@
-<!DOCTYPE html>
+
+   <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Model Boutique</title>
+  <title>Model Boutique — Nairobi's Finest Fashion</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+  <meta name="description" content="Model Boutique — Modern, stylish and comfortable fashion in Nairobi.">
+  <meta property="og:title" content="Model Boutique">
+  <meta property="og:description" content="Nairobi's finest fashion for every generation.">
+  <meta name="theme-color" content="#1a1410">
 </head>
 <body>
 
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <span class="loader-icon">✦</span>
+      <span class="loader-text">Model Boutique</span>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursorFollower"></div>
+
+  <!-- PAGE TRANSITION -->
+  <div id="pageTransition"></div>
+
+  <!-- PROMO BANNER -->
+  <div id="promoBanner">
+    <p>🎉 <strong>Free delivery</strong> on orders above KSh 5,000 &mdash; <a href="#order">Order Now</a></p>
+    <button id="promoClose">&times;</button>
+  </div>
+
+  <!-- HEADER -->
   <header id="header">
     <div class="header-inner">
       <div class="logo">
@@ -24,27 +53,55 @@
         <a href="#gallery">Gallery</a>
         <a href="#location">Location</a>
         <a href="#contact">Contact</a>
+        <a href="#reviews">Reviews</a>
         <a href="#order" class="nav-cta">Order Now</a>
       </nav>
-      <button class="menu-toggle" id="menuToggle">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-actions">
+        <button id="darkToggle" title="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <button id="cartBtn" class="cart-btn">
+          <i class="fas fa-shopping-bag"></i>
+          <span id="cartCount">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
+  <!-- HERO -->
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
       <p class="hero-tag">Nairobi's Finest Fashion</p>
       <h2 class="hero-title">Style That<br><em>Speaks</em> For You</h2>
-      <p class="hero-sub">Modern, stylish and comfortable clothing for every generation</p>
+      <p class="hero-sub">
+        <span id="typewriter"></span><span class="type-cursor">|</span>
+      </p>
+      <div class="countdown-wrap">
+        <p class="countdown-label">🔥 Weekend Sale Ends In</p>
+        <div class="countdown" id="countdown">
+          <div class="countdown-block"><span id="cdDays">00</span><small>Days</small></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-block"><span id="cdHours">00</span><small>Hours</small></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-block"><span id="cdMins">00</span><small>Mins</small></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-block"><span id="cdSecs">00</span><small>Secs</small></div>
+        </div>
+      </div>
       <div class="hero-actions">
         <a href="#products" class="btn-primary">Shop Now</a>
         <a href="#gallery" class="btn-outline">View Gallery</a>
       </div>
     </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
   </section>
 
+  <!-- ABOUT -->
   <section id="about">
     <div class="section-inner split-layout">
       <div class="about-text">
@@ -64,23 +121,77 @@
     </div>
   </section>
 
+  <!-- PRODUCTS -->
   <section id="products">
     <div class="section-inner">
       <span class="section-label center">What We Offer</span>
       <h2 class="section-title center">Our Products</h2>
+      <div class="search-bar-wrap">
+        <input type="text" id="productSearch" placeholder="Search products...">
+        <i class="fas fa-search search-icon"></i>
+      </div>
       <div class="product-grid">
-        <div class="product-card"><div class="product-icon">👖</div><h3>Jeans</h3><p class="product-price">KSh 2,500</p><a href="#order" class="product-order">Order →</a></div>
-        <div class="product-card"><div class="product-icon">🧥</div><h3>Jackets</h3><p class="product-price">KSh 3,000</p><a href="#order" class="product-order">Order →</a></div>
-        <div class="product-card"><div class="product-icon">👕</div><h3>Cargo Pants</h3><p class="product-price">KSh 2,800</p><a href="#order" class="product-order">Order →</a></div>
-        <div class="product-card"><div class="product-icon">🧸</div><h3>Baby Clothes</h3><p class="product-price">KSh 1,200</p><a href="#order" class="product-order">Order →</a></div>
-        <div class="product-card"><div class="product-icon">👔</div><h3>Khaki</h3><p class="product-price">KSh 2,000</p><a href="#order" class="product-order">Order →</a></div>
-        <div class="product-card"><div class="product-icon">👗</div><h3>Dresses</h3><p class="product-price">KSh 3,500</p><a href="#order" class="product-order">Order →</a></div>
-        <div class="product-card"><div class="product-icon">🌙</div><h3>Pajamas</h3><p class="product-price">KSh 1,500</p><a href="#order" class="product-order">Order →</a></div>
-        <div class="product-card"><div class="product-icon">👟</div><h3>Shoes</h3><p class="product-price">KSh 4,000</p><a href="#order" class="product-order">Order →</a></div>
+        <div class="product-card" data-price="2500">
+          <div class="product-icon">👖</div>
+          <h3>Jeans</h3>
+          <p class="product-price">KSh 2,500</p>
+          <a href="#order" class="product-order">Order →</a>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="3000">
+          <div class="product-icon">🧥</div>
+          <h3>Jackets</h3>
+          <p class="product-price">KSh 3,000</p>
+          <a href="#order" class="product-order">Order →</a>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="2800">
+          <div class="product-icon">👕</div>
+          <h3>Cargo Pants</h3>
+          <p class="product-price">KSh 2,800</p>
+          <a href="#order" class="product-order">Order →</a>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="1200">
+          <div class="product-icon">🧸</div>
+          <h3>Baby Clothes</h3>
+          <p class="product-price">KSh 1,200</p>
+          <a href="#order" class="product-order">Order →</a>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="2000">
+          <div class="product-icon">👔</div>
+          <h3>Khaki</h3>
+          <p class="product-price">KSh 2,000</p>
+          <a href="#order" class="product-order">Order →</a>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="3500">
+          <div class="product-icon">👗</div>
+          <h3>Dresses</h3>
+          <p class="product-price">KSh 3,500</p>
+          <a href="#order" class="product-order">Order →</a>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="1500">
+          <div class="product-icon">🌙</div>
+          <h3>Pajamas</h3>
+          <p class="product-price">KSh 1,500</p>
+          <a href="#order" class="product-order">Order →</a>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add to Cart</button>
+        </div>
+        <div class="product-card" data-price="4000">
+          <div class="product-icon">👟</div>
+          <h3>Shoes</h3>
+          <p class="product-price">KSh 4,000</p>
+          <a href="#order" class="product-order">Order →</a>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add to Cart</button>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- GALLERY -->
   <section id="gallery">
     <div class="section-inner">
       <span class="section-label center">Our Style</span>
@@ -110,11 +221,13 @@
     </div>
   </section>
 
+  <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox">
     <button class="lightbox-close" id="lightboxClose">&times;</button>
     <img class="lightbox-img" id="lightboxImg" src="#" alt="Full view">
   </div>
 
+  <!-- LOCATION -->
   <section id="location">
     <div class="section-inner">
       <span class="section-label">Find Us</span>
@@ -133,6 +246,7 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <div class="section-inner">
       <span class="section-label center">Get In Touch</span>
@@ -166,10 +280,52 @@
     </div>
   </section>
 
+  <!-- REVIEWS -->
   <section id="reviews">
     <div class="section-inner">
       <span class="section-label center">What Clients Say</span>
       <h2 class="section-title center">Customer Reviews</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-slide">
+            <div class="quote-icon">❝</div>
+            <p>"Amazing quality clothes! The jeans fit perfectly and the price was very fair. Will definitely order again."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">JW</div>
+              <div><strong>Jane Wanjiru</strong><span>⭐⭐⭐⭐⭐</span></div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="quote-icon">❝</div>
+            <p>"Ordered a dress for my daughter's graduation. It was beautiful and delivered on time. Model Boutique is the best!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MK</div>
+              <div><strong>Mary Kamau</strong><span>⭐⭐⭐⭐⭐</span></div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="quote-icon">❝</div>
+            <p>"The WhatsApp ordering system is so convenient. Placed my order and got confirmation within minutes!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">BO</div>
+              <div><strong>Brian Otieno</strong><span>⭐⭐⭐⭐⭐</span></div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="quote-icon">❝</div>
+            <p>"Best boutique in Nairobi! The baby clothes I bought were so cute and high quality. My baby loves them."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">AN</div>
+              <div><strong>Aisha Ndungu</strong><span>⭐⭐⭐⭐⭐</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" id="sliderPrev"><i class="fas fa-chevron-left"></i></button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-btn" id="sliderNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
       <div id="reviewContainer" class="reviews-list"></div>
       <div class="review-form-wrap">
         <h3>Leave a Review</h3>
@@ -201,6 +357,7 @@
     </div>
   </section>
 
+  <!-- ORDER -->
   <section id="order">
     <div class="section-inner">
       <span class="section-label center">Shop With Us</span>
@@ -231,6 +388,26 @@
               <option value="Shoes"        data-price="4000">👟 Shoes — KSh 4,000</option>
             </select>
           </div>
+          <div class="form-group" id="sizeGroup" style="display:none;">
+            <label for="sizeSelect">Size</label>
+            <select id="sizeSelect">
+              <option value="">— Select Size —</option>
+            </select>
+          </div>
+          <div class="form-group" id="colorGroup" style="display:none;">
+            <label>Preferred Color</label>
+            <div class="color-swatches" id="colorSwatches">
+              <button type="button" class="swatch" data-color="Black" style="background:#111"></button>
+              <button type="button" class="swatch" data-color="White" style="background:#fff;border:1.5px solid #ddd"></button>
+              <button type="button" class="swatch" data-color="Navy"  style="background:#1e3a5f"></button>
+              <button type="button" class="swatch" data-color="Brown" style="background:#6b3a2a"></button>
+              <button type="button" class="swatch" data-color="Khaki" style="background:#c3a882"></button>
+              <button type="button" class="swatch" data-color="Red"   style="background:#c0392b"></button>
+              <button type="button" class="swatch" data-color="Green" style="background:#1e6b3f"></button>
+              <button type="button" class="swatch" data-color="Pink"  style="background:#e91e8c"></button>
+            </div>
+            <input type="hidden" id="selectedColor" value="">
+          </div>
           <div class="form-row">
             <div class="form-group">
               <label for="quantity">Quantity</label>
@@ -240,50 +417,7 @@
               <label for="priceDisplay">Price per Item</label>
               <input type="text" id="priceDisplay" placeholder="—" readonly>
             </div>
-            <div class="form-group">
-              <label for="totalDisplay">Total</label>
-              <input type="text" id="totalDisplay" placeholder="—" readonly class="total-field">
-            </div>
-          </div>
-          <button type="submit" class="btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> Send Order via WhatsApp
-          </button>
-        </form>
-        <p class="order-note"><i class="fas fa-info-circle"></i> Your order will be sent directly to our WhatsApp for fast processing.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="qr-section">
-    <div class="section-inner qr-inner">
-      <span class="section-label center">Share Us</span>
-      <h2 class="section-title center">Scan to Visit Our Website</h2>
-      <div class="qr-card">
-        <div id="qrcode"></div>
-        <p class="qr-url">modelboutique.co.ke</p>
-        <p class="qr-hint">Scan with your phone camera</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand"><span>✦</span><span>Model Boutique</span></div>
-      <p class="footer-tagline">Style that speaks for you.</p>
-      <nav class="footer-nav">
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-        <a href="#order">Order</a>
-      </nav>
-      <p class="footer-copy">© 2026 Model Boutique. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-                                    </html>
+            <div class="form       
 
 
 
