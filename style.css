@@ -263,6 +263,4 @@ footer { background: var(--ink); padding: 3rem 0 2rem; }
   .order-wrap, .review-form-wrap { padding: 1.5rem; }
   .hero-actions { flex-direction: column; }
   .form-row { grid-template-columns: 1fr; }
-    }
-
-
+}
